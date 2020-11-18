@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, facilis, voluptas eius dicta earum dignissimos aperiam nam unde tempore cum delectus neque, aliquam pariatur quisquam? Quae illum nisi consectetur ea.
+    Laudantium eveniet nihil animi facere pariatur tempora, fugit veritatis distinctio labore impedit, nemo repellat doloremque? Laborum eveniet, ad, similique aliquid corporis aperiam sapiente, consequuntur dolor necessitatibus rem non soluta ratione.
+    Est animi neque consectetur quo reprehenderit eos tempore. Quis, labore! Praesentium, magni sequi blanditiis enim a et voluptates! Natus, aliquid possimus! Quibusdam perspiciatis ipsum explicabo! Beatae mollitia provident eos. Impedit!
+    Ea libero facere, commodi asperiores autem, officiis delectus repellendus molestias quia, consequatur cum aperiam ex cupiditate iste quo molestiae eveniet ducimus. Nostrum porro aliquam iure ipsum, debitis voluptas dolor doloremque?
+    Dignissimos ut voluptatibus rem debitis reprehenderit est explicabo tenetur, inventore eos sed saepe a harum? Totam, aliquam recusandae beatae id est voluptatum voluptates iure voluptatem impedit architecto accusantium expedita fuga!
+    Iure facilis est delectus, eius molestiae placeat harum eum ipsa beatae! Et a quidem distinctio laboriosam deleniti repellat ipsum, delectus, culpa dignissimos quae consequuntur sapiente voluptatum incidunt eaque animi commodi.
+    Tempora excepturi blanditiis deserunt illum inventore maiores voluptatem quam repellat mollitia! Omnis, ea? Eos voluptatibus ducimus nobis itaque temporibus, sapiente accusamus tempora quidem harum in id sunt impedit est nemo.
+    Cumque, autem nostrum laudantium deleniti error libero omnis qui quia aliquam minima, magnam vitae maiores, officia obcaecati odit. Atque quod et placeat doloribus sed ullam nemo. Vero mollitia error deserunt?
+    Labore, eaque autem illum nihil odit temporibus quidem repellat, neque doloribus officiis laborum quos eos necessitatibus vero facere harum ipsam maxime architecto quisquam illo nostrum est impedit incidunt. Repellendus, nostrum?
+    Magnam dignissimos quibusdam nemo sequi laudantium rem enim nostrum culpa mollitia doloremque distinctio quam voluptatum quod, asperiores architecto, eum voluptas praesentium voluptates ipsa corporis. Quae, quaerat tenetur! Iure, nisi facilis.
+    Soluta hic, repellendus corrupti minus aspernatur nulla? Nobis autem laborum impedit culpa minus ipsa aperiam veniam nihil possimus ut minima, corrupti neque repudiandae error. Vitae nobis unde cumque eius incidunt!
+    Eos magni quae, provident repellat facilis illo. Nihil laborum nemo fuga iure mollitia. Neque aliquam molestiae ea, impedit hic a, culpa, nihil animi possimus perferendis totam odit dignissimos. Maxime, autem.
+    Voluptatibus dolore illo eius voluptates quasi voluptas mollitia iste ut nulla voluptatem, deleniti praesentium eos commodi iusto aliquam laboriosam veritatis quaerat vero rerum nobis incidunt molestias ullam dolorum exercitationem? Pariatur?
+    Consequatur dicta quidem mollitia enim, numquam quasi similique exercitationem quam saepe quod, deleniti iure aspernatur? Temporibus mollitia consequatur iure vero? Qui ex repudiandae, incidunt quidem numquam quae illo maxime fugit.
+    Laboriosam quisquam minima quaerat quasi distinctio blanditiis nihil nesciunt exercitationem alias illum non obcaecati fugiat, nulla totam sed accusantium iure tempore vel sit harum repellat provident voluptatem ea. Aspernatur, a.
+    Inventore, aut, asperiores corporis sed accusantium et laudantium sapiente architecto voluptas adipisci quia, fuga ea debitis! Dolore necessitatibus, ab repellendus repudiandae hic vel est et fugiat corporis nulla ipsa explicabo.
+    Laborum vitae, alias unde iure tempora beatae expedita reprehenderit cum dolores qui cupiditate, vel deserunt quas consequatur mollitia? Magni beatae vitae, enim voluptatem repellat id sunt numquam illum quos placeat?
+    Eligendi aspernatur nemo explicabo nobis, quod illum facilis et eveniet similique accusamus suscipit odit itaque iusto magni atque alias fuga veniam praesentium! Possimus necessitatibus, minima blanditiis eius cumque consequuntur ipsum.
+    Quis, modi. Quos ea corrupti exercitationem repellat vitae neque enim. Ut eos voluptatum pariatur ea delectus blanditiis est magni eius sit. Dolorum numquam accusantium necessitatibus officia consequuntur? Sed, suscipit consequatur.
+    Voluptatum in alias assumenda ipsa dolores reprehenderit accusamus quos iste saepe odio at facilis veniam voluptatibus illum incidunt rerum, nisi nemo perferendis qui repudiandae aspernatur! Placeat, laboriosam. Aspernatur, reprehenderit fuga.</div>
+    <style>
+        body {
+            font-size: 40px;
+            line-height: 1.3;
+        }
+        .aleksashka-fps {
+            position: fixed;
+            z-index: 9999;
+            right: 10px;
+            top: 10px;
+            background: linear-gradient(#87f1e3 0, #54b7e2 100%);
+            border-radius: 35px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            overflow: hidden;
+            display: none;
+        }
+        .aleksashka-fps.is-visible {
+            display: block; 
+        }
+    </style>
+    <script>
+        class FPS {
+            constructor() {
+                this.width = 150;
+                this.height = 65;
+
+                this.canvas = document.createElement('canvas');
+                this.ctx = this.canvas.getContext('2d');
+
+                this.canvas.width = this.width;
+                this.canvas.height = this.height;
+                this.canvas.classList.add('aleksashka-fps');
+                this.ctx.font = 'bold 26px Arial';
+                this.startTime = 0;
+                this.frame = 0;
+                this.allFPS = [];
+                this.hidden = true;
+                this.playing = false;
+                document.body.appendChild(this.canvas);
+                var that = this;
+                this.canvas.addEventListener('click', function() {
+                    that.playpause();
+                });
+            }
+            playpause() {
+                this.playing = this.playing ? false : true;
+                if (this.playing) this.loop();
+            }
+            toggle() {
+                this.hidden = this.hidden ? false : true;
+
+                if (!this.hidden) {
+                    this.loop();
+                    this.canvas.classList.add('is-visible');
+                } else {
+                    this.canvas.classList.remove('is-visible');
+                }
+            }
+            loop() {
+                if (this.hidden || !this.playing) return false;
+                var that = this;
+                window.requestAnimationFrame(function() {
+                    that.draw();
+                    that.loop();
+                })
+            }
+            add(x) {
+                this.allFPS.unshift(x);
+                this.allFPS = this.allFPS.slice(0, this.width);
+            }
+            draw() {
+                var currentFPS = this.getFPS();
+                this.add(currentFPS);
+                this.ctx.clearRect(0, 0, this.width, this.height);
+
+                for(var i = 0; i <= this.width; i++) {
+                    this.ctx.fillStyle = '#000000';
+                    this.ctx.fillRect(i, 0, 1, 5 + 60 - this.allFPS[i]);
+                    this.ctx.fillStyle = '#ffffff';
+                    this.ctx.fillRect(i, 5 + 60 - this.allFPS[i], 1, 2);
+                }
+                this.ctx.fillStyle = '#000000';
+                this.ctx.fillText(currentFPS + ' fps', 69, 51);
+                this.ctx.fillStyle = '#ffffff';
+                this.ctx.fillText(currentFPS + ' fps', 70, 50);
+            }
+            getFPS() {
+                this.frame++;
+
+                var d = Date.now();
+                this.currentTime = (d - this.startTime) / 1000;
+                var result = Math.floor(this.frame / this.currentTime);
+                if (this.currentTime > 1) {
+                    this.startTime = Date.now();
+                    this.frame = 0;
+                }
+                return result;
+            }
+        }
+
+        var fps = new FPS;
+        fps.toggle();
+        fps.playpause()
+    </script>
+</body>
+</html>

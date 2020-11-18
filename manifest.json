@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "Aleksashka's FPS Extension",
+    "description": "FPS Extension",
+    "version": "0.1",
+    "browser_action": {
+        "default_icon": "speed.png"
+    },
+    "permissions": [
+        "activeTab"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": ["fps.js"],
+            "css": ["fps.css"]
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    }
+}
